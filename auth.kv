@@ -1,0 +1,40 @@
+<Auth>:
+    AnchorLayout:
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: [.5, .5]
+            spacing: 3
+            Label:
+                text: "Вход в систему"
+                halign: "center"
+                valign: "middle"
+                color: 255,255,255,1
+                font_size: self.height / 2.0
+                margin_y: -20
+            Label:
+                id: error
+                text: ""
+                font_size: self.height / 2.0
+                color: 1, 255 ,255 ,1
+            TextInput:
+                id: log
+                hint_text: "Логин"
+                font_size: self.height / 2.0
+                halign: 'center'
+                padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+            TextInput:
+                id: passw
+                hint_text: "Пароль"
+                font_size: self.height / 2.0
+                password: True
+                halign: "center"
+                padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+            Label:
+                text: ""
+            BoxLayout:
+                Button:
+                    font_size: self.height / 3.0
+                    text: "Войти"
+                    halign: "center"
+                    size_hint: [.1, 1]
+                    on_press: root.login(log.text, passw.text)
